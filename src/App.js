@@ -60,8 +60,21 @@ function App() {
         <button onClick={clickMe}>Hola Mundo</button>
         <button className='button2' onClick={clickT}>Hola prueba 2</button>
         <button ref={ref}>Click</button>
+        <button onClick={() => window.ReactNativeWebView.postMessage('hola')}>Holaaaaaaaa</button>
+        <button onClick={() => {
+          if (navigator.appVersion.includes('Android')) {
+            document.addEventListener("message", function (data) {
+              alert("you are in iOS");
+            });
+          }
+          else {
+            window.addEventListener("message", function (data) {
+              alert("you are in android OS");
+            });
+          }
+        }}>Diferente OS</button>
       </header>
-    </div>
+    </div >
   );
 }
 
