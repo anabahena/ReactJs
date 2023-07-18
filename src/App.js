@@ -7,7 +7,7 @@ function App() {
   const clickMe = () => {
     window.parent.postMessage(
       JSON.stringify({ functionToRun: "soundAlert", alertMessage: "userInput" }),
-      "http://localhost:3000/"
+      "https://react-crpgvjq8h-anabahena.vercel.app/?vercelToolbarCode=IXOSiQ2HZCpfkdv"
     );
   };
 
