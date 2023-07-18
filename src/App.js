@@ -2,6 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const clickMe = () => {
+    window.parent.postMessage(
+      JSON.stringify({ functionToRun: "soundAlert", alertMessage: "userInput" }),
+      "http://localhost:3000/"
+    );
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +25,7 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={clickMe}>Hola Mundo</button>
       </header>
     </div>
   );
